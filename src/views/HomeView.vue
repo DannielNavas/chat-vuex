@@ -4,7 +4,7 @@ import InputSearch from "@/components/InputSearch.vue";
 import ProfileCard from "@/components/ProfileCard.vue";
 // import store from "@/store/store.js";
 import { RouterLink, RouterView } from "vue-router";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   components: {
@@ -45,6 +45,7 @@ export default {
     //   username: (state) => state.username,
     // }),
     ...mapState(["username"]),
+    ...mapGetters(["firstName"]),
   },
 };
 </script>
@@ -54,9 +55,11 @@ export default {
     <aside>
       <InputSearch v-model="search" />
       <!-- :username="store.username" -->
+      <!-- :username="username" -->
+      <!-- :username="$store.getters.firstName('🅿️')" -->
       <ProfileCard
         :avatar="profile.avatar"
-        :username="username"
+        :username="firstName('🎃')"
         :status="profile.status"
       />
       <RouterLink to="/" class="channels-title"
