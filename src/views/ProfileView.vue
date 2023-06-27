@@ -1,8 +1,20 @@
 <script setup>
-import store from "@/store/store.js";
-import { reactive } from "vue";
+// import store from "@/store/store.js";
+// import { reactive } from "vue";
 
-const data = reactive(store);
+// const data = reactive(store);
+import { computed } from "vue";
+import { useStore } from "vuex";
+// import { mapState, mapMutations } from "vuex";
+
+// TODO: mapMutations funciona como las methods de Vue
+const store = useStore();
+
+const username = computed(() => store.state.username);
+
+const updateUsername = (username) => {
+  store.commit("updateUsername", username);
+};
 </script>
 <template>
   <div class="profile">
@@ -12,10 +24,10 @@ const data = reactive(store);
       <input
         type="text"
         placeholder="Jane Smith"
-        :value="data.username"
-        @input="store.updateUsername($event.target.value)"
+        :value="username"
+        @input="updateUsername($event.target.value)"
       />
-      <button>Acceder</button>
+      <button @click="$router.push('/')">Acceder</button>
     </div>
   </div>
 </template>
