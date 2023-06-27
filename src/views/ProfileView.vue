@@ -1,9 +1,20 @@
+<script setup>
+import store from "@/store/store.js";
+import { reactive } from "vue";
+
+const data = reactive(store);
+</script>
 <template>
   <div class="profile">
     <div class="box">
       <img src="/avatars/avatar.jpg" alt="avatar" />
       <label for="username">Nombre de usuario</label>
-      <input type="text" placeholder="Jane Smith" />
+      <input
+        type="text"
+        placeholder="Jane Smith"
+        :value="data.username"
+        @input="store.updateUsername($event.target.value)"
+      />
       <button>Acceder</button>
     </div>
   </div>
