@@ -1,3 +1,5 @@
+import { getUser } from "@/api";
+import { COMMIT_UPDATE_USERNAME } from "@/common/mutation-types";
 import { createStore } from "vuex";
 
 const store = createStore({
@@ -20,16 +22,26 @@ const store = createStore({
     },
   },
   mutations: {
-    updateUsername(state, username) {
+    // updateUsername(state, username) {
+    //   state.username = username;
+    // },
+    [COMMIT_UPDATE_USERNAME](state, username) {
       state.username = username;
     },
   },
   actions: {
     // TODO: esto se hace de forma asincrona
-    updateUsername({ commit, state }, username) {
+    // updateUsername({ commit, state }, username) {
+    //   console.log("updateUsername", state.username, username);
+    //TODO: hace referencia a la mutacion
+    //   commit("updateUsername", username);
+    // },
+
+    async updateUsername({ commit, state }, username) {
       console.log("updateUsername", state.username, username);
-      //TODO: hace referencia a la mutacion
-      commit("updateUsername", username);
+      const user = await getUser(1);
+      console.log("user", user);
+      commit(COMMIT_UPDATE_USERNAME, user.username);
     },
   },
 });
