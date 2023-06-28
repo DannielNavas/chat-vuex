@@ -21,7 +21,6 @@ export default {
       search: "",
       profile: {
         username: "Diana Nerd",
-        status: "active",
         avatar: "/avatars/avatar.jpg",
       },
       channels: [
@@ -45,6 +44,7 @@ export default {
     //   username: (state) => state.username,
     // }),
     ...mapState(["username"]),
+    ...mapState(["status"]),
     ...mapGetters("profile", ["firstName"]),
     // ...mapGetters("otroModulo", ["otraFuncion"]),
   },
@@ -61,7 +61,7 @@ export default {
       <ProfileCard
         :avatar="profile.avatar"
         :username="firstName('')"
-        :status="profile.status"
+        :status="status"
       />
       <RouterLink to="/" class="channels-title"
         >Canales <Icon icon="carbon:hashtag"

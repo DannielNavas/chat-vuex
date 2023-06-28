@@ -6,7 +6,7 @@ const module = {
   namespaced: true,
   state() {
     return {
-      username: "Darker13Navas",
+      username: "",
     };
   },
   getters: {
@@ -20,9 +20,15 @@ const module = {
     },
   },
   actions: {
-    async updateUsername({ commit, state }, username) {
+    async updateUsername({ commit, state, rootState }, username) {
       console.log("updateUsername", state.username, username);
       const user = await getUser(1);
+      console.log(rootState);
+      if (state.username) {
+        // TODO: se accede a la mutacion del modulo root
+        commit("setStatus", "active", { root: true });
+        // commit("session/setStatus", "active", { root: true });
+      }
       commit(COMMIT_UPDATE_USERNAME, user.username);
     },
   },

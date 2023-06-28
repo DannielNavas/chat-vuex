@@ -5,6 +5,7 @@ const store = createStore({
   state() {
     return {
       // username: "Darker13Navas",
+      status: null,
     };
   },
   // TODO: no pertenecen al componente si no al estado
@@ -31,6 +32,9 @@ const store = createStore({
     // [COMMIT_UPDATE_USERNAME](state, username) {
     //   state.username = username;
     // },
+    setStatus(state, status) {
+      state.status = status;
+    },
   },
   actions: {
     // TODO: esto se hace de forma asincrona
