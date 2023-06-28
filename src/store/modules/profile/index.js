@@ -2,6 +2,8 @@ import { getUser } from "@/api";
 import { COMMIT_UPDATE_USERNAME } from "@/common/mutation-types";
 
 const module = {
+  // TODO: se implementa el espacio de nombre para evitar el conflicto de nombres
+  namespaced: true,
   state() {
     return {
       username: "Darker13Navas",

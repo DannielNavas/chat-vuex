@@ -45,7 +45,8 @@ export default {
     //   username: (state) => state.username,
     // }),
     ...mapState(["username"]),
-    ...mapGetters(["firstName"]),
+    ...mapGetters("profile", ["firstName"]),
+    // ...mapGetters("otroModulo", ["otraFuncion"]),
   },
 };
 </script>
@@ -59,7 +60,7 @@ export default {
       <!-- :username="$store.getters.firstName('🅿️')" -->
       <ProfileCard
         :avatar="profile.avatar"
-        :username="firstName('🎃')"
+        :username="firstName('')"
         :status="profile.status"
       />
       <RouterLink to="/" class="channels-title"

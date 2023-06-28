@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     // ...mapMutations(['updateUsername']),
-    ...mapActions(["updateUsername"]),
+    ...mapActions("profile", ["updateUsername"]),
   },
 };
 </script>
