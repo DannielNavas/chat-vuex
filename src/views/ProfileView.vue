@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 // import store from "@/store/store.js";
 // import { reactive } from "vue";
 
@@ -14,6 +14,23 @@ const username = computed(() => store.state.username);
 
 const updateUsername = (username) => {
   store.commit("updateUsername", username);
+};
+const updateUsername = (username) => {
+  store.dispatch("updateUsername", username);
+};
+</script> -->
+
+<script>
+import { mapActions, mapState } from "vuex";
+
+export default {
+  computed: {
+    ...mapState(["username"]),
+  },
+  methods: {
+    // ...mapMutations(['updateUsername']),
+    ...mapActions(["updateUsername"]),
+  },
 };
 </script>
 <template>

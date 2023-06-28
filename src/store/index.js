@@ -24,6 +24,14 @@ const store = createStore({
       state.username = username;
     },
   },
+  actions: {
+    // TODO: esto se hace de forma asincrona
+    updateUsername({ commit, state }, username) {
+      console.log("updateUsername", state.username, username);
+      //TODO: hace referencia a la mutacion
+      commit("updateUsername", username);
+    },
+  },
 });
 
 export default store;
