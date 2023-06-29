@@ -9,6 +9,8 @@
 
 // export default store;
 
+// TODO: normalizacion de datos
+
 const store = {
   profile: {
     username: "",
