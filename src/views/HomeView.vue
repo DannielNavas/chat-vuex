@@ -47,6 +47,7 @@ export default {
     ...mapState(["status"]),
     ...mapGetters("profile", ["firstName"]),
     // ...mapGetters("otroModulo", ["otraFuncion"]),
+    ...mapGetters("channels", ["getChannels"]),
   },
 };
 </script>
@@ -68,11 +69,11 @@ export default {
       /></RouterLink>
       <div class="channels">
         <ChatItem
-          v-for="channel in channels"
+          v-for="channel in getChannels(search)"
           :key="channel.id"
           :id="channel.id"
           :name="channel.name"
-          :messages="channel.messages"
+          :messages="channel.messages.length"
         />
       </div>
     </aside>
