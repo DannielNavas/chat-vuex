@@ -6,7 +6,13 @@ const module = {
   namespaced: true,
   state() {
     return {
+      id: 1,
       username: "",
+      details: {
+        id: 1,
+        name: "Danniel Navas",
+        avatar: "/avatars/avatar.jpg",
+      },
     };
   },
   getters: {

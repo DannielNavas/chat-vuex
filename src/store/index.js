@@ -1,4 +1,5 @@
 import channels from "@/store/modules/channels";
+import contacts from "@/store/modules/contacts";
 import messages from "@/store/modules/messages";
 import profile from "@/store/modules/profile";
 import { createStore } from "vuex";
@@ -56,6 +57,7 @@ const store = createStore({
     profile,
     channels,
     messages,
+    contacts,
     // {
     // TODO: uso basico de los modulos
     // state() {
