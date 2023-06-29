@@ -4,6 +4,9 @@ const getters = {
       (message) => message.channelId === parseInt(channelId)
     );
   },
+  getUnreadMessages: (state, getters, rootState, rootGetters) => (channelId) => {
+    return getters.getMessages(channelId).filter((message) => !message.read).length;
+  },
 };
 
 export default getters;

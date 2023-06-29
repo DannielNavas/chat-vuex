@@ -33,6 +33,7 @@ const module = {
           author: 3,
           message: "¿Cómo están?",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 4,
         },
         {
@@ -40,6 +41,7 @@ const module = {
           author: 1,
           message: "Todo muy bien :D",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 1,
         },
         {
@@ -47,6 +49,7 @@ const module = {
           author: 2,
           message: "Si, todo bien.",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 2,
         },
         {
@@ -54,6 +57,7 @@ const module = {
           author: 1,
           message: "Oigan, les escribo para contarles algo... 😌",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 3,
         },
         {
@@ -61,6 +65,7 @@ const module = {
           author: 3,
           message: "A vers 👀",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 4,
         },
         {
@@ -68,6 +73,7 @@ const module = {
           author: 2,
           message: "Ahhhh!!",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 1,
         },
         {
@@ -75,6 +81,7 @@ const module = {
           author: 2,
           message: "¡Cuenta ese chismesito yaaaa!",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 2,
         },
         {
@@ -82,6 +89,7 @@ const module = {
           author: 1,
           message: "Pues, ¡acabamos de lanzar los nuevos cursos de Vue.js! ❣️",
           timestamp: new Date().toLocaleTimeString(),
+          read: false,
           channelId: 4,
         },
       ],
