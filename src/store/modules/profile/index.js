@@ -23,13 +23,13 @@ const module = {
     async updateUsername({ commit, state, rootState }, username) {
       console.log("updateUsername", state.username, username);
       const user = await getUser(1);
-      console.log(rootState);
+      commit(COMMIT_UPDATE_USERNAME, user.username);
       if (state.username) {
         // TODO: se accede a la mutacion del modulo root
         commit("setStatus", "active", { root: true });
+        console.log(rootState.status);
         // commit("session/setStatus", "active", { root: true });
       }
-      commit(COMMIT_UPDATE_USERNAME, user.username);
     },
   },
 };
